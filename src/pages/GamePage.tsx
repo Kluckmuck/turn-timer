@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Player, Turn } from '../types/game'
+import type { Player, Turn } from '../types/game'
 import { useGame } from '../context/GameContext'
 import { useTimer } from '../hooks/useTimer'
 import { formatTime } from '../utils/time'

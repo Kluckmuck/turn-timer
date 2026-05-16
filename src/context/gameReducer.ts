@@ -1,4 +1,4 @@
-import { Player, Turn } from '../types/game'
+import type { Player, Turn } from '../types/game'
 
 export interface GameState {
   players: Player[]

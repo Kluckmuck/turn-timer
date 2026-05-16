@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Player } from '../types/game'
+import type { Player } from '../types/game'
 import { COLOR_PALETTE } from '../utils/colors'
 import { generateId } from '../utils/id'
 import { ColorPicker } from '../components/ColorPicker'

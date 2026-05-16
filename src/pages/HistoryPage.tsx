@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { GameSession } from '../types/game'
+import type { GameSession } from '../types/game'
 import { computePlayerStats } from '../utils/stats'
 import { formatTime } from '../utils/time'
 

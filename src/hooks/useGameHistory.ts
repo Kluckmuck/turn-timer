@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { GameSession } from '../types/game'
+import type { GameSession } from '../types/game'
 
 const STORAGE_KEY = 'turn-timer-history'
 

@@ -1,4 +1,4 @@
-import { Turn, PlayerStats } from '../types/game'
+import type { Turn, PlayerStats } from '../types/game'
 
 export function computePlayerStats(playerId: string, turns: Turn[]): PlayerStats {
   const playerTurns = turns.filter(t => t.playerId === playerId)

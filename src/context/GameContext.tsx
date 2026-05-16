@@ -1,5 +1,5 @@
-import { createContext, useContext, useReducer, ReactNode } from 'react'
-import { gameReducer, initialGameState, GameState, GameAction } from './gameReducer'
+import { createContext, useContext, useReducer, type ReactNode } from 'react'
+import { gameReducer, initialGameState, type GameState, type GameAction } from './gameReducer'
 
 interface GameContextValue {
   state: GameState

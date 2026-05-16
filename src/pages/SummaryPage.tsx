@@ -1,4 +1,4 @@
-import { Player, Turn } from '../types/game'
+import type { Player, Turn } from '../types/game'
 import { computePlayerStats } from '../utils/stats'
 import { formatTime } from '../utils/time'
 
