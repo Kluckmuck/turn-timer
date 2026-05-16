@@ -28,13 +28,14 @@ export function ColorPicker({ selected, usedColors, onChange }: ColorPickerProps
         )
       })}
       <label
-        className={`w-8 h-8 rounded-full border-2 cursor-pointer transition-transform hover:scale-105 ${
-          isCustomColor ? 'border-white scale-110' : 'border-transparent'
-        } overflow-hidden relative`}
+        className={`w-8 h-8 rounded-full cursor-pointer transition-transform hover:scale-105 ${
+          isCustomColor ? 'scale-110' : ''
+        } relative`}
         style={{
           background: isCustomColor
             ? selected
             : 'conic-gradient(red, yellow, lime, aqua, blue, magenta, red)',
+          boxShadow: isCustomColor ? 'inset 0 0 0 2px white' : undefined,
         }}
         aria-label="Pick custom color"
       >
