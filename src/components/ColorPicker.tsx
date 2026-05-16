@@ -10,7 +10,7 @@ export function ColorPicker({ selected, usedColors, onChange }: ColorPickerProps
   const isCustomColor = !COLOR_PALETTE.some(c => c.hex === selected)
 
   return (
-    <div className="flex gap-2 items-center">
+    <div className="flex flex-wrap gap-2 items-center">
       {COLOR_PALETTE.map(({ hex }) => {
         const isUsed = usedColors.includes(hex) && hex !== selected
         return (
@@ -19,7 +19,7 @@ export function ColorPicker({ selected, usedColors, onChange }: ColorPickerProps
             type="button"
             disabled={isUsed}
             onClick={() => onChange(hex)}
-            className={`w-8 h-8 rounded-full border-2 transition-transform ${
+            className={`w-7 h-7 rounded-full border-2 transition-transform shrink-0 ${
               hex === selected ? 'border-white scale-110' : 'border-transparent'
             } ${isUsed ? 'opacity-30 cursor-not-allowed' : 'cursor-pointer hover:scale-105'}`}
             style={{ backgroundColor: hex }}
@@ -28,7 +28,7 @@ export function ColorPicker({ selected, usedColors, onChange }: ColorPickerProps
         )
       })}
       <label
-        className={`w-8 h-8 rounded-full cursor-pointer transition-transform hover:scale-105 ${
+        className={`w-7 h-7 rounded-full cursor-pointer transition-transform hover:scale-105 shrink-0 ${
           isCustomColor ? 'scale-110' : ''
         } relative`}
         style={{

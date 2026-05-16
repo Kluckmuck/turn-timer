@@ -51,29 +51,31 @@ export function SetupPage({ onStart, onHistory }: SetupPageProps) {
 
       <div className="flex-1 space-y-4">
         {rows.map((row, index) => (
-          <div key={row.id} className="flex items-center gap-3">
-            <input
-              type="text"
-              placeholder={`Player ${index + 1}`}
-              value={row.name}
-              onChange={e => updateName(row.id, e.target.value)}
-              className="flex-1 bg-gray-800 rounded-lg px-4 py-3 text-white placeholder-gray-500 outline-none focus:ring-2 focus:ring-blue-500"
-            />
+          <div key={row.id} className="bg-gray-800 rounded-lg p-3 space-y-2">
+            <div className="flex items-center gap-3">
+              <input
+                type="text"
+                placeholder={`Player ${index + 1}`}
+                value={row.name}
+                onChange={e => updateName(row.id, e.target.value)}
+                className="flex-1 bg-gray-700 rounded-lg px-4 py-3 text-white placeholder-gray-500 outline-none focus:ring-2 focus:ring-blue-500"
+              />
+              {rows.length > 1 && (
+                <button
+                  type="button"
+                  onClick={() => removePlayer(row.id)}
+                  className="text-gray-500 hover:text-red-400 text-xl"
+                  aria-label={`Remove player ${index + 1}`}
+                >
+                  ×
+                </button>
+              )}
+            </div>
             <ColorPicker
               selected={row.color}
               usedColors={usedColors}
               onChange={color => updateColor(row.id, color)}
             />
-            {rows.length > 1 && (
-              <button
-                type="button"
-                onClick={() => removePlayer(row.id)}
-                className="text-gray-500 hover:text-red-400 text-xl"
-                aria-label={`Remove player ${index + 1}`}
-              >
-                ×
-              </button>
-            )}
           </div>
         ))}
       </div>
