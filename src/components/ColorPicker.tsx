@@ -31,7 +31,11 @@ export function ColorPicker({ selected, usedColors, onChange }: ColorPickerProps
         className={`w-8 h-8 rounded-full border-2 cursor-pointer transition-transform hover:scale-105 ${
           isCustomColor ? 'border-white scale-110' : 'border-transparent'
         } overflow-hidden relative`}
-        style={{ backgroundColor: isCustomColor ? selected : '#6B7280' }}
+        style={{
+          background: isCustomColor
+            ? selected
+            : 'conic-gradient(red, yellow, lime, aqua, blue, magenta, red)',
+        }}
         aria-label="Pick custom color"
       >
         <input
